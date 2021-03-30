@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     //River river;
     //Crystal crystal;
 
+    UiManager uiManager;
 
     private void Start()
     {
@@ -18,14 +19,23 @@ public class GameManager : MonoBehaviour
         //river = FindObjectOfType<River>();
         //crystal = FindObjectOfType<Crystal>();
 
+        uiManager = FindObjectOfType<UiManager>();
+
         //initialize the static references.
         StaticReference.Sword = FindObjectOfType<Sword>();
         StaticReference.Target = FindObjectOfType<House>().transform;
+        StaticReference.GameManager = this;
     }
 
     void Update()
     {
         UnlockResourcesByExperience();
+    }
+
+    public void EnemyDied(Enemy enemy)
+    {
+        Stats.Experience += enemy.Exp;
+        uiManager.UpdateText();
     }
 
     private void UnlockResourcesByExperience()
@@ -44,7 +54,7 @@ public class GameManager : MonoBehaviour
         //    mountain.Unlock();
         //}
         //else 
-        if (Stats.Score > forest.ActivationScore && forest.ActiveFlag == false)
+        if (Stats.Experience > forest.ActivationScore && forest.ActiveFlag == false)
         {
             forest.Unlock();
         }

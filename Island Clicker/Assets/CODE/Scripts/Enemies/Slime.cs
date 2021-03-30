@@ -29,6 +29,8 @@ public class Slime : Enemy
 
     public override void Die()
     {
+        //tell the game manager that you died.
+        StaticReference.GameManager.EnemyDied(this);
         Destroy(this.gameObject); //TODO: could apply object pooling technique if we have time
     }
 
