@@ -21,7 +21,6 @@ public class GameManager : MonoBehaviour
         //initialize the static references.
         StaticReference.Sword = FindObjectOfType<Sword>();
         StaticReference.Target = FindObjectOfType<House>().transform;
-
     }
 
     void Update()

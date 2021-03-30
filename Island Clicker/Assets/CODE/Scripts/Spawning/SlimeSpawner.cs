@@ -25,7 +25,7 @@ public class SlimeSpawner : Spawner
     private void Spawn()
     {
         //check where
-        int index = (int)Random.value;
+        int index = (int)Random.Range(0,4);
         var spawnPos = spawnPoints[index];
         //spawn
         var enemy = Instantiate(base.enemy, spawnPos.position, spawnPos.rotation); //TODO: possible use of Object Pooling

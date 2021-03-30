@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 282850546952420017}
   - component: {fileID: 282850546952420018}
   - component: {fileID: 8528349518844333304}
+  - component: {fileID: 8314605370888414490}
   m_Layer: 0
   m_Name: slime
   m_TagString: Untagged
@@ -44,8 +45,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f57decf348e9c9a4b94824e6696b284e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  sword: {fileID: 0}
 --- !u!212 &8528349518844333304
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -96,3 +95,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &8314605370888414490
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 282850546952420019}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.24, y: -0.4}
+  serializedVersion: 2
+  m_Radius: 6.7
