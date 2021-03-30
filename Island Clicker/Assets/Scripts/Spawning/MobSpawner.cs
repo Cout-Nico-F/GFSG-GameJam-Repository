@@ -5,23 +5,30 @@ using UnityEngine;
 
 public class MobSpawner : MonoBehaviour
 {
-    bool wood, stone, water, crystal = false;
+    bool isSpawningWood, isSpawningStone, isSpawningWater, isSpawningCrystal = false;
+
+    public bool IsSpawningWood { get => isSpawningWood; set => isSpawningWood = value; }
+    public bool IsSpawningStone { get => isSpawningStone; set => isSpawningStone = value; }
+    public bool IsSpawningWater { get => isSpawningWater; set => isSpawningWater = value; }
+    public bool IsSpawningCrystal { get => isSpawningCrystal; set => isSpawningCrystal = value; }
+
     private void Update()
     {
+        
         SpawnBasic();
-        if (wood)
+        if (isSpawningWood)
         {
             SpawnWood();
         }
-        if (stone)
+        if (isSpawningStone)
         {
             SpawnStone();
         }
-        if (water)
+        if (IsSpawningWater)
         {
             SpawnWater();
         }
-        if (crystal)
+        if (isSpawningCrystal)
         {
             SpawnCrystal();
         }
@@ -49,6 +56,7 @@ public class MobSpawner : MonoBehaviour
 
     private void SpawnBasic()
     {
+
         throw new NotImplementedException();
     }
 }
