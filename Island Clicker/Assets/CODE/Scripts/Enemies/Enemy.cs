@@ -8,7 +8,6 @@ public abstract class Enemy : MonoBehaviour
     protected float speed;
     protected int exp;
 
-    public Transform target;
 
     public abstract void DropMaterial();
     public abstract void Move();

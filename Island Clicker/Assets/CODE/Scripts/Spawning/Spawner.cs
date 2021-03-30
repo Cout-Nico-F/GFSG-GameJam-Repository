@@ -10,4 +10,5 @@ public abstract class Spawner : MonoBehaviour
     protected Transform[] spawnPoints;
     [SerializeField]
     protected Enemy enemy;
+    
 }

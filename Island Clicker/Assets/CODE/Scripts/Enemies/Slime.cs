@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Slime : Enemy
 {
-    [SerializeField]
-    private Sword sword; //applied to the prefab on editor.
     public Slime()
     {
         this.exp = 17;
@@ -26,7 +24,7 @@ public class Slime : Enemy
 
     public override void Move()
     {
-        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, StaticReference.Target.position, speed * Time.deltaTime);
     }
 
     public override void Die()
@@ -36,7 +34,7 @@ public class Slime : Enemy
 
     public override void OnMouseEnter()
     {
-        if (sword.Damage > this.health)
+        if (StaticReference.Sword.Damage > this.health)
         {
             Die();
         }
@@ -44,7 +42,7 @@ public class Slime : Enemy
 
     public override void OnMouseDown()
     {
-        health -= sword.Damage;
+        health -= StaticReference.Sword.Damage;
         if (health <= 0)
         {
             Die();
