@@ -13,5 +13,6 @@ public class Mountain : Resource
     public override void Unlock()
     {
         base.isUnlocked = true;
+        StaticReference.GameManager.ActivateSpawners(GameManager.EnemyTypes.Rock);
     }
 }

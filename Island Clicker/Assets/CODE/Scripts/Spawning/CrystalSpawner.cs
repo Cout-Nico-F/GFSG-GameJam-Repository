@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class SlimeSpawner : Spawner
+public class CrystalSpawner : Spawner
 {
-    public SlimeSpawner()
+    public CrystalSpawner()
     {
         base.spawnPoints = new Transform[5];
-        base.spawnCooldown = 4f;
+        base.spawnCooldown = 5f;
         base.cooldownResetNumber = base.spawnCooldown;
     }
     private void Update()

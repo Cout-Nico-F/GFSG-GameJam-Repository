@@ -13,13 +13,6 @@ public class Forest : Resource
     public override void Unlock()
     {
         base.isUnlocked = true;
+        StaticReference.GameManager.ActivateSpawners(GameManager.EnemyTypes.Wood);
     }
-
-    //public override void ActivationScoreCheck()
-    //{
-    //    if (isUnlocked == false && Stats.Score > ActivationScore)
-    //    {
-    //        Unlock();
-    //    }
-    //}
 }

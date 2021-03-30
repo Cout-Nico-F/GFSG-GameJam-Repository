@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Crystal : Resource
+public class Crystals : Resource
 {
-    public Crystal()
+    public Crystals()
     {
         base.isUnlocked = false;
         base.unlockScore = 10000;
@@ -13,5 +13,6 @@ public class Crystal : Resource
     public override void Unlock()
     {
         base.isUnlocked = true;
+        StaticReference.GameManager.ActivateSpawners(GameManager.EnemyTypes.Crystal);
     }
 }

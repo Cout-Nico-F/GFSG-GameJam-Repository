@@ -5,19 +5,42 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    Forest forest;
-    //Mountain mountain;
-    //River river;
-    //Crystal crystal;
+    
 
+    //Resources
+    Forest forest;
+    Mountain mountain;
+    River river;
+    Crystals crystal;
+    //UI
     UiManager uiManager;
+    //Enemy
+    public enum EnemyTypes
+    {
+        Slime,
+        Wood,
+        Rock,
+        Water,
+        Crystal
+    }
+    //Spawners
+    [SerializeField]
+    GameObject slimeSpawner;
+    [SerializeField]
+    GameObject woodSpawner;
+    [SerializeField]
+    GameObject rockSpawner;
+    [SerializeField]
+    GameObject waterSpawner;
+    [SerializeField]
+    GameObject crystalSpawner;
 
     private void Start()
     {
         forest = FindObjectOfType<Forest>();
-        //mountain = FindObjectOfType<Mountain>();
-        //river = FindObjectOfType<River>();
-        //crystal = FindObjectOfType<Crystal>();
+        mountain = FindObjectOfType<Mountain>();
+        river = FindObjectOfType<River>();
+        crystal = FindObjectOfType<Crystals>();
 
         uiManager = FindObjectOfType<UiManager>();
 
@@ -38,25 +61,49 @@ public class GameManager : MonoBehaviour
         uiManager.UpdateText();
     }
 
+    public void ActivateSpawners(EnemyTypes enemy)
+    {
+        switch (enemy)
+        {
+            case EnemyTypes.Slime:
+                break;
+            case EnemyTypes.Wood:
+                woodSpawner.SetActive(true);
+                break;
+            case EnemyTypes.Rock:
+                rockSpawner.SetActive(true);
+                break;
+            case EnemyTypes.Water:
+                waterSpawner.SetActive(true);
+                break;
+            case EnemyTypes.Crystal:
+                crystalSpawner.SetActive(true);
+                break;
+            default:
+                break;
+        }
+    }
+
     private void UnlockResourcesByExperience()
     {
-        
-        //if (Stats.Score >= crystal.ActivationScore && crystal.ActiveFlag == false)
-        //{
-        //    crystal.Unlock();
-        //}
-        //else if (Stats.Score > river.ActivationScore && river.ActiveFlag == false)
-        //{
-        //    river.Unlock();
-        //}
-        //else if (Stats.Score > mountain.ActivationScore && mountain.ActiveFlag == false)
-        //{
-        //    mountain.Unlock();
-        //}
-        //else 
+        if (Stats.Experience >= crystal.ActivationScore && crystal.ActiveFlag == false)
+        {
+            crystal.Unlock();
+        }
+        else if (Stats.Experience > river.ActivationScore && river.ActiveFlag == false)
+        {
+            river.Unlock();
+        }
+        else if (Stats.Experience > mountain.ActivationScore && mountain.ActiveFlag == false)
+        {
+            mountain.Unlock();
+        }
+        else
         if (Stats.Experience > forest.ActivationScore && forest.ActiveFlag == false)
         {
             forest.Unlock();
         }
     }
+
+
 }

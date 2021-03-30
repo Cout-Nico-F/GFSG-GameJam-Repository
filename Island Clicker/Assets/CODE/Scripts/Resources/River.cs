@@ -13,5 +13,6 @@ public class River : Resource
     public override void Unlock()
     {
         base.isUnlocked = true;
+        StaticReference.GameManager.ActivateSpawners(GameManager.EnemyTypes.Water);
     }
 }

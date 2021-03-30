@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class SlimeSpawner : Spawner
+public class WaterSpawner : Spawner
 {
-    public SlimeSpawner()
+    public WaterSpawner()
     {
         base.spawnPoints = new Transform[5];
-        base.spawnCooldown = 4f;
+        base.spawnCooldown = 5f;
         base.cooldownResetNumber = base.spawnCooldown;
     }
     private void Update()
@@ -29,6 +29,6 @@ public class SlimeSpawner : Spawner
         int index = (int)Random.Range(0,4);
         var spawnPos = spawnPoints[index];
         //spawn
-        Instantiate(base.enemy, spawnPos.position, spawnPos.rotation); //TODO: possible use of Object Pooling
+        var enemy = Instantiate(base.enemy, spawnPos.position, spawnPos.rotation); //TODO: possible use of Object Pooling
     }
 }
