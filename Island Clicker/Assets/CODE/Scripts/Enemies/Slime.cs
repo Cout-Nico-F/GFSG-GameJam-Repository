@@ -32,7 +32,6 @@ public class Slime : Enemy
     public override void Die()
     {
         Destroy(this.gameObject); //TODO: could apply object pooling technique if we have time
-        throw new System.NotImplementedException();
     }
 
     public override void OnMouseEnter()
