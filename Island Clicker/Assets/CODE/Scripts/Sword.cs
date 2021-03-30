@@ -10,16 +10,33 @@ public class Sword : MonoBehaviour
 
     public void WoodUpgrade()
     {
-        //Check if you have the requisites
-        //upgrade damage
-        damage = 30;
+        if (Stats.Wood >= 10)
+        {
+            Stats.Wood -= 10;
+            damage = 30;
+        }
+        else
+        {
+            //you cant upgrade.
+            //Animation
+        }
         //change sword-ui button
     }
     public void StoneUpgrade()
     {
         //Check if you have the requisites
         //upgrade damage
-        damage = 60;
+        if (Stats.Wood >= 30 && Stats.Rock >= 3)
+        {
+            Stats.Rock -= 3;
+            Stats.Wood -= 30;
+            damage = 60;
+        }
+        else
+        {
+            //you cant upgrade.
+            //Animation
+        }
         //change sword-ui button
 
     }
@@ -27,11 +44,22 @@ public class Sword : MonoBehaviour
     {
         //Check if you have the requisites
         //upgrade damage
-        damage = 180;
+        if (Stats.Wood >= 5 && Stats.Rock >= 6 && Stats.Water >= 20)
+        {
+            Stats.Rock -= 3;
+            Stats.Wood -= 30;
+            Stats.Water -= 20;
+            damage = 180;
+        }
+        else
+        {
+            //you cant upgrade.
+            //Animation
+        }
         //change sword-ui button
 
     }
-    public void ExperienceUpgrade()
+    public void HolyWaterUpgrade()
     {
         //Check if you have the requisites
         //upgrade damage

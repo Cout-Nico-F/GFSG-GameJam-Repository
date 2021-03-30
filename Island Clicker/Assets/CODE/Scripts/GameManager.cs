@@ -50,15 +50,15 @@ public class GameManager : MonoBehaviour
         StaticReference.GameManager = this;
     }
 
-    void Update()
-    {
-        UnlockResourcesByExperience();
-    }
-
     public void EnemyDied(Enemy enemy)
     {
+
         Stats.Experience += enemy.Exp;
         uiManager.UpdateText();
+        //lootManager.DropLoot ?
+        //Decide what to drop based on the type of enemy ?
+
+        UnlockResourcesByExperience();
     }
 
     public void ActivateSpawners(EnemyTypes enemy)
