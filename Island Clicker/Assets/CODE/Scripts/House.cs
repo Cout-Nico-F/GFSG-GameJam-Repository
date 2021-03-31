@@ -6,11 +6,17 @@ using UnityEngine;
 public class House : MonoBehaviour
 {
     private int health = 6;
+    private UiManager uiManager;
+
+    private void Awake()
+    {
+        uiManager = FindObjectOfType<UiManager>();    
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         health--;
-        //updateHealthUI;
+        uiManager.UpdateHealth(health);
         if (health <= 0)
         {
             Destroyed();

@@ -29,7 +29,7 @@ public class UiManager : MonoBehaviour
     [SerializeField]
     private List<GameObject> inactiveWoodIcons, inactiveRockIcons, inactiveWaterIcons, inactiveCrystalIcons;
     private List<GameObject> activeWoodIcons, activeRockIcons, activeWaterIcons, activeCrystalIcons;
-
+    [SerializeField]
     private GameObject  hearts1, hearts2, hearts3, hearts4, hearts5, hearts6;
 
     public int MaxWood { get => maxWood; }
