@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    
+
 
     //Resources
     Forest forest;
@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
     {
 
         Stats.Experience += enemy.Exp;
-        uiManager.UpdateText();
+        uiManager.UpdateExperience();
 
         AssignLootStats(enemy);
         uiManager.UpdateIcons(enemy.EnemyType);
@@ -69,18 +69,39 @@ public class GameManager : MonoBehaviour
         {
             case GameManager.EnemyTypes.Slime:
                 break;
+
             case GameManager.EnemyTypes.Wood:
-                Stats.Wood += enemy.LootAmmount;
+                if (Stats.Wood < uiManager.MaxWood)
+                {
+                    Stats.Wood += enemy.LootAmmount;
+                }
+                else Stats.Wood = uiManager.MaxWood;
                 break;
+
             case GameManager.EnemyTypes.Rock:
-                Stats.Rock += enemy.LootAmmount;
+                if (Stats.Rock < uiManager.MaxRock)
+                {
+                    Stats.Rock += enemy.LootAmmount;
+                }
+                else Stats.Rock = uiManager.MaxRock;
                 break;
+
             case GameManager.EnemyTypes.Water:
-                Stats.Water += enemy.LootAmmount;
+                if (Stats.Water < uiManager.MaxWater)
+                {
+                    Stats.Water += enemy.LootAmmount;
+                }
+                else Stats.Water = uiManager.MaxWater;
                 break;
+
             case GameManager.EnemyTypes.Crystal:
-                Stats.Crystal += enemy.LootAmmount;
+                if (Stats.Crystal < uiManager.MaxCrystals)
+                {
+                    Stats.Crystal += enemy.LootAmmount;
+                }
+                else Stats.Crystal = uiManager.MaxCrystals;
                 break;
+
             default:
                 break;
         }
