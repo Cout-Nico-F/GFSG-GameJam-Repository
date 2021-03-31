@@ -115,7 +115,7 @@ public class Sword : MonoBehaviour
             Stats.Water -= 150;
             uiManager.SpentMaterials(GameManager.EnemyTypes.Crystal, 6);
             uiManager.SpentMaterials(GameManager.EnemyTypes.Water, 150);
-            
+
 
             damage = 1080;
             holyWaterUpgradeUI.SetActive(false);
@@ -134,8 +134,13 @@ public class Sword : MonoBehaviour
         {
             lastDamage = damage;
             damage = 9999;
+            isGodSword = true;
         }
-        else damage = lastDamage;
+        else
+        {
+            damage = lastDamage;
+            isGodSword = false;
+        }
     }
 
 }
