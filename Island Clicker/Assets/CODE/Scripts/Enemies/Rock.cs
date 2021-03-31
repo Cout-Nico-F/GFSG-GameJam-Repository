@@ -8,7 +8,7 @@ public class Rock : Enemy
     {
         this.exp = 65;
         this.health = 180;
-        this.speed = 0.9f;
+        this.speed = 120f;
     }
 
     // Update is called once per frame

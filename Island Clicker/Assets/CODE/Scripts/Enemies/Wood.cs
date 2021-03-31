@@ -8,7 +8,7 @@ public class Wood : Enemy
     {
         this.exp = 25;
         this.health = 60;
-        this.speed = 1.3f;
+        this.speed = 140f;
     }
 
     // Update is called once per frame

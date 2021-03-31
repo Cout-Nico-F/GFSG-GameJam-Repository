@@ -8,7 +8,7 @@ public class Crystal : Enemy
     {
         this.exp = 150;
         this.health = 2160;
-        this.speed = 0.8f;
+        this.speed = 120;
     }
 
     // Update is called once per frame

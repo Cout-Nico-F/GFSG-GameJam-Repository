@@ -9,7 +9,7 @@ public class SlimeSpawner : Spawner
     public SlimeSpawner()
     {
         base.spawnPoints = new Transform[5];
-        base.spawnCooldown = 4f;
+        base.spawnCooldown = 2f;
         base.cooldownResetNumber = base.spawnCooldown;
     }
     private void Update()

@@ -9,7 +9,7 @@ public class WoodSpawner : Spawner
     public WoodSpawner()
     {
         base.spawnPoints = new Transform[5];
-        base.spawnCooldown = 4.3f;
+        base.spawnCooldown = 2f;
         base.cooldownResetNumber = base.spawnCooldown;
     }
     private void Update()

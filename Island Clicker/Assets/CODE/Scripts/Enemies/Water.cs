@@ -8,7 +8,7 @@ public class Water : Enemy
     {
         this.exp = 95;
         this.health = 540;
-        this.speed = 1;
+        this.speed = 120;
     }
 
     // Update is called once per frame

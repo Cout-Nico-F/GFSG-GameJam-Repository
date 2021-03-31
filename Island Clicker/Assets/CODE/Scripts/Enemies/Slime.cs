@@ -8,7 +8,7 @@ public class Slime : Enemy
     {
         this.exp = 17;
         this.health = 30;
-        this.speed = 1;
+        this.speed = 150;
     }
 
     // Update is called once per frame
