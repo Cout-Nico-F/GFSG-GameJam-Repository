@@ -8,7 +8,7 @@ public class Water : Enemy
     {
         this.exp = 95;
         this.health = 540;
-        this.speed = 120;
+        this.speed = 110 * speedMultiplier;
         this.lootAmmount = 10;
         this.enemyType = GameManager.EnemyTypes.Water;
     }

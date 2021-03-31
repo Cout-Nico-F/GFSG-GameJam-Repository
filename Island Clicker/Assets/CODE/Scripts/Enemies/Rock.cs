@@ -8,7 +8,7 @@ public class Rock : Enemy
     {
         this.exp = 65;
         this.health = 180;
-        this.speed = 120f;
+        this.speed = 120f * speedMultiplier;
         this.lootAmmount = 1;
         this.enemyType = GameManager.EnemyTypes.Rock;
     }

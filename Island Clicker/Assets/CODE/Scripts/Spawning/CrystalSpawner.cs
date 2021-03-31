@@ -9,7 +9,7 @@ public class CrystalSpawner : Spawner
     public CrystalSpawner()
     {
         base.spawnPoints = new Transform[5];
-        base.spawnCooldown = 4f;
+        base.spawnCooldown = 5f;
         base.cooldownResetNumber = base.spawnCooldown;
     }
     private void Update()

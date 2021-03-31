@@ -17,6 +17,8 @@ public class Sword : MonoBehaviour
     }
     public int Damage { get => damage; }
 
+    private bool isGodSword;
+    private int lastDamage;
     public void WoodUpgrade()
     {
         if (Stats.Wood >= 10)
@@ -124,6 +126,16 @@ public class Sword : MonoBehaviour
             //you cant upgrade.
             //Animation
         }
+    }
+
+    public void GodSword()
+    {
+        if (!isGodSword)
+        {
+            lastDamage = damage;
+            damage = 9999;
+        }
+        else damage = lastDamage;
     }
 
 }

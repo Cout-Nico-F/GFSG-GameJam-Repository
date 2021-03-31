@@ -8,7 +8,7 @@ public class Crystal : Enemy
     {
         this.exp = 150;
         this.health = 2160;
-        this.speed = 120;
+        this.speed = 100 * speedMultiplier;
         this.lootAmmount = 1;
         this.enemyType = GameManager.EnemyTypes.Crystal;
     }

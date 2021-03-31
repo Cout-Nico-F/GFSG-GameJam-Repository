@@ -8,7 +8,7 @@ public class Wood : Enemy
     {
         this.exp = 25;
         this.health = 60;
-        this.speed = 140f;
+        this.speed = 120f * speedMultiplier;
         this.lootAmmount = 4;
         this.enemyType = GameManager.EnemyTypes.Wood;
     }

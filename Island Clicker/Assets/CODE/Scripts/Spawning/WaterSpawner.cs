@@ -9,7 +9,7 @@ public class WaterSpawner : Spawner
     public WaterSpawner()
     {
         base.spawnPoints = new Transform[5];
-        base.spawnCooldown = 3f;
+        base.spawnCooldown = 5f; 
         base.cooldownResetNumber = base.spawnCooldown;
     }
     private void Update()

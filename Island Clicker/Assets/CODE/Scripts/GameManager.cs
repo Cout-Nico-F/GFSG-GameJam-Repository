@@ -6,7 +6,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
-
+    private int speedGodMode = 0;
+    private float spawnGodMode = 10;
     //Resources
     Forest forest;
     Mountain mountain;
@@ -147,6 +148,71 @@ public class GameManager : MonoBehaviour
         if (Stats.Experience > forest.ActivationScore && forest.ActiveFlag == false)
         {
             forest.Unlock();
+        }
+    }
+
+    public void SpeedGodMode()
+    {
+        if (speedGodMode < 5)
+        {
+            Enemy.speedMultiplier = 5;
+            speedGodMode = 5;
+        }
+        else if (speedGodMode < 15)
+        {
+            Enemy.speedMultiplier = 15;
+            speedGodMode = 15;
+        }
+        else
+        {
+            Enemy.speedMultiplier = 1;
+            speedGodMode = 0;
+        }
+    }
+
+    public void SpawnGodMode()
+    {
+        if (spawnGodMode > 2)
+        {
+            slimeSpawner.GetComponent<SlimeSpawner>().SpawnCooldown = 2;
+            slimeSpawner.GetComponent<SlimeSpawner>().CooldownResetNumber = 2;
+            woodSpawner.GetComponent<WoodSpawner>().SpawnCooldown = 2;
+            woodSpawner.GetComponent<WoodSpawner>().CooldownResetNumber = 2;
+            rockSpawner.GetComponent<RockSpawner>().SpawnCooldown = 2;
+            rockSpawner.GetComponent<RockSpawner>().CooldownResetNumber = 2;
+            waterSpawner.GetComponent<WaterSpawner>().SpawnCooldown = 2;
+            waterSpawner.GetComponent<WaterSpawner>().CooldownResetNumber = 2;
+            crystalSpawner.GetComponent<CrystalSpawner>().SpawnCooldown = 2;
+            crystalSpawner.GetComponent<CrystalSpawner>().CooldownResetNumber = 2;
+            spawnGodMode = 2;
+        }
+        else if (spawnGodMode > 0.4f)
+        {
+            slimeSpawner.GetComponent<SlimeSpawner>().SpawnCooldown = 0.4f;
+            slimeSpawner.GetComponent<SlimeSpawner>().CooldownResetNumber = 0.4f;
+            woodSpawner.GetComponent<WoodSpawner>().SpawnCooldown = 0.4f;
+            woodSpawner.GetComponent<WoodSpawner>().CooldownResetNumber = 0.4f;
+            rockSpawner.GetComponent<RockSpawner>().SpawnCooldown = 0.4f;
+            rockSpawner.GetComponent<RockSpawner>().CooldownResetNumber = 0.4f;
+            waterSpawner.GetComponent<WaterSpawner>().SpawnCooldown = 0.4f;
+            waterSpawner.GetComponent<WaterSpawner>().CooldownResetNumber = 0.4f;
+            crystalSpawner.GetComponent<CrystalSpawner>().SpawnCooldown = 0.4f;
+            crystalSpawner.GetComponent<CrystalSpawner>().CooldownResetNumber = 0.4f;
+            spawnGodMode = 0.4f;
+        }
+        else
+        {
+            slimeSpawner.GetComponent<SlimeSpawner>().SpawnCooldown = 3;
+            slimeSpawner.GetComponent<SlimeSpawner>().CooldownResetNumber = 3;
+            woodSpawner.GetComponent<WoodSpawner>().SpawnCooldown = 4;
+            woodSpawner.GetComponent<WoodSpawner>().CooldownResetNumber = 4;
+            rockSpawner.GetComponent<RockSpawner>().SpawnCooldown = 5;
+            rockSpawner.GetComponent<RockSpawner>().CooldownResetNumber = 5;
+            waterSpawner.GetComponent<WaterSpawner>().SpawnCooldown = 5;
+            waterSpawner.GetComponent<WaterSpawner>().CooldownResetNumber = 5;
+            crystalSpawner.GetComponent<CrystalSpawner>().SpawnCooldown = 5;
+            crystalSpawner.GetComponent<CrystalSpawner>().CooldownResetNumber = 5;
+            spawnGodMode = 10;
         }
     }
 

@@ -12,5 +12,7 @@ public abstract class Spawner : MonoBehaviour
     protected Enemy enemy;
 
     protected float cooldownResetNumber;
-    
+
+    public float SpawnCooldown { get => spawnCooldown; set => spawnCooldown = value; }
+    public float CooldownResetNumber { get => cooldownResetNumber; set => cooldownResetNumber = value; }
 }

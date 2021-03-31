@@ -27,7 +27,7 @@ public class UiManager : MonoBehaviour
     private int crystalAmmountPerIcon = 2;
 
     [SerializeField]
-    private List<GameObject> inactiveWoodIcons , inactiveRockIcons, inactiveWaterIcons , inactiveCrystalIcons;
+    private List<GameObject> inactiveWoodIcons, inactiveRockIcons, inactiveWaterIcons, inactiveCrystalIcons;
     private List<GameObject> activeWoodIcons, activeRockIcons, activeWaterIcons, activeCrystalIcons;
 
     public int MaxWood { get => maxWood; }
@@ -43,7 +43,7 @@ public class UiManager : MonoBehaviour
         activeRockIcons = new List<GameObject>();
         activeWaterIcons = new List<GameObject>();
     }
-    
+
     public void UpdateExperience()
     {
         //tmp.text = "Experience: " + Stats.Experience;
@@ -55,28 +55,28 @@ public class UiManager : MonoBehaviour
         {
             case GameManager.EnemyTypes.Slime:
                 break;
-            case GameManager.EnemyTypes.Wood:                
-                if (Stats.Wood >= woodAmmountPerIcon * (activeWoodIcons.Count+1))
+            case GameManager.EnemyTypes.Wood:
+                if (Stats.Wood >= woodAmmountPerIcon * (activeWoodIcons.Count + 1))
                 {
-                    ActivateIcon(activeWoodIcons ,inactiveWoodIcons);
+                    ActivateIcon(activeWoodIcons, inactiveWoodIcons);
                 }
                 break;
             case GameManager.EnemyTypes.Rock:
-                if (Stats.Rock >= rockAmmountPerIcon * activeRockIcons.Count+1)
+                if (Stats.Rock >= rockAmmountPerIcon * activeRockIcons.Count + 1)
                 {
-                    ActivateIcon(activeRockIcons ,inactiveRockIcons);
+                    ActivateIcon(activeRockIcons, inactiveRockIcons);
                 }
                 break;
             case GameManager.EnemyTypes.Water:
                 if (Stats.Water >= waterAmmountPerIcon * activeWaterIcons.Count + 1)
                 {
-                    ActivateIcon(activeWaterIcons ,inactiveWaterIcons);
+                    ActivateIcon(activeWaterIcons, inactiveWaterIcons);
                 }
                 break;
             case GameManager.EnemyTypes.Crystal:
                 if (Stats.Crystal >= crystalAmmountPerIcon * activeCrystalIcons.Count + 1)
                 {
-                    ActivateIcon(activeCrystalIcons ,inactiveCrystalIcons);
+                    ActivateIcon(activeCrystalIcons, inactiveCrystalIcons);
                 }
                 break;
             default:
@@ -118,23 +118,27 @@ public class UiManager : MonoBehaviour
 
         for (int i = 0; i < amount; i++)
         {
-            int index = (int)UnityEngine.Random.Range(0, activeList.Count-1);
+            int index = (int)UnityEngine.Random.Range(0, activeList.Count - 1);
             activeList[index].SetActive(false);
             inActiveList.Add(activeList[index]);
             activeList.RemoveAt(index);
         }
-        
+
     }
 
     private void ActivateIcon(List<GameObject> activeIcons, List<GameObject> inactiveIcons)
     {
-        int index =(int) UnityEngine.Random.Range(0, inactiveIcons.Count-1);
-        
-        inactiveIcons[index].SetActive(true);
+        if (inactiveIcons.Count != 0)
+        {
+            int index = (int)UnityEngine.Random.Range(0, inactiveIcons.Count - 1);
 
-        activeIcons.Add(inactiveIcons[index]);
+            inactiveIcons[index].SetActive(true);
 
-        inactiveIcons.RemoveAt(index);
+            activeIcons.Add(inactiveIcons[index]);
 
+            inactiveIcons.RemoveAt(index);
+        }
+        else
+            Debug.LogWarning("Inactive Icons lenght was 0 when we tried to activate an icon.");
     }
 }

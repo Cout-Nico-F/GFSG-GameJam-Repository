@@ -8,7 +8,7 @@ public class Slime : Enemy
     {
         this.exp = 17;
         this.health = 30;
-        this.speed = 170;
+        this.speed = 160 * speedMultiplier;
         this.enemyType = GameManager.EnemyTypes.Slime;
     }
 
