@@ -34,12 +34,9 @@ public class Sword : MonoBehaviour
             //you cant upgrade.
             //Animation
         }
-        //change sword-ui button
     }
     public void StoneUpgrade()
     {
-        //Check if you have the requisites
-        //upgrade damage
         if (Stats.Wood >= 30 && Stats.Rock >= 4)
         {
             Stats.Rock -= 4;
@@ -56,13 +53,9 @@ public class Sword : MonoBehaviour
             //you cant upgrade.
             //Animation
         }
-        //change sword-ui button
-
     }
     public void WaterUpgrade()
     {
-        //Check if you have the requisites
-        //upgrade damage
         if (Stats.Wood >= 30 && Stats.Rock >= 8 && Stats.Water >= 50)
         {
             Stats.Wood -= 30;
@@ -81,20 +74,18 @@ public class Sword : MonoBehaviour
             //you cant upgrade.
             //Animation
         }
-        //change sword-ui button
-
     }
     public void HolyWaterUpgrade()
     {
         //Check if you have the requisites
-        if (Stats.Wood >= 100 && Stats.Rock >= 16 && Stats.Water >= 150)
+        if (Stats.Wood >= 90 && Stats.Rock >= 16 && Stats.Water >= 225)
         {
-            Stats.Wood -= 100;
+            Stats.Wood -= 90;
             Stats.Rock -= 16;
-            Stats.Water -= 150;
-            uiManager.SpentMaterials(GameManager.EnemyTypes.Wood, 100);
+            Stats.Water -= 225;
+            uiManager.SpentMaterials(GameManager.EnemyTypes.Wood, 90);
             uiManager.SpentMaterials(GameManager.EnemyTypes.Rock, 16);
-            uiManager.SpentMaterials(GameManager.EnemyTypes.Water, 150);
+            uiManager.SpentMaterials(GameManager.EnemyTypes.Water, 225);
             damage = 540;
             holyWaterUpgradeUI.SetActive(false);
             crystalUpgradeUI.SetActive(true);
@@ -105,7 +96,6 @@ public class Sword : MonoBehaviour
             //you cant upgrade.
             //Animation
         }
-
     }
     public void CrystalUpgrade()
     {
