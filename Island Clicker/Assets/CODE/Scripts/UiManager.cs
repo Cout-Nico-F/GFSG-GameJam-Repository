@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using System;
 
 public class UiManager : MonoBehaviour
@@ -18,8 +17,6 @@ public class UiManager : MonoBehaviour
     private int maxRock = 28;
     private int maxWater = 225;
     private int maxCrystals = 18;
-
-    TextMeshProUGUI tmp;
 
     private int woodAmmountPerIcon = 10;
     private int rockAmmountPerIcon = 4;
@@ -39,7 +36,6 @@ public class UiManager : MonoBehaviour
 
     private void Awake()
     {
-        tmp = GetComponent<TextMeshProUGUI>();
         activeCrystalIcons = new List<GameObject>();
         activeWoodIcons = new List<GameObject>();
         activeRockIcons = new List<GameObject>();
