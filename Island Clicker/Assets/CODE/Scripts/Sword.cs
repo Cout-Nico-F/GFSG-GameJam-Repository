@@ -10,6 +10,12 @@ public class Sword : MonoBehaviour
     private UiManager uiManager;
     [SerializeField]
     private GameObject woodUpgradeUI, stoneUpgradeUI, waterUpgradeUI, holyWaterUpgradeUI, crystalUpgradeUI, maxedUpgradeUI;
+    [Space]
+    [SerializeField]
+    private GameObject woodRecipeUi, stoneRecipeUi, waterRecipeUi, holyWaterRecipeUi, crystalRecipeUi;
+    [Space]
+    [SerializeField]
+    private GameObject antennaRecipeUi;
 
     private void Awake()
     {
@@ -31,8 +37,9 @@ public class Sword : MonoBehaviour
         }
         else
         {
-            //you cant upgrade.
-            //Animation
+            //mostrar ui durante X segundos
+            ShowMessageCoroutine(woodRecipeUi, 3f);
+            //Animation?
         }
     }
     public void StoneUpgrade()
@@ -51,6 +58,7 @@ public class Sword : MonoBehaviour
         else
         {
             //you cant upgrade.
+            ShowMessageCoroutine(stoneRecipeUi, 4f);
             //Animation
         }
     }
@@ -72,6 +80,7 @@ public class Sword : MonoBehaviour
         else
         {
             //you cant upgrade.
+            ShowMessageCoroutine(waterRecipeUi, 6f);
             //Animation
         }
     }
@@ -94,6 +103,7 @@ public class Sword : MonoBehaviour
         else
         {
             //you cant upgrade.
+            ShowMessageCoroutine(holyWaterRecipeUi, 7f);
             //Animation
         }
     }
@@ -114,6 +124,7 @@ public class Sword : MonoBehaviour
         else
         {
             //you cant upgrade.
+            ShowMessageCoroutine(crystalRecipeUi, 5f);
             //Animation
         }
     }
@@ -132,5 +143,16 @@ public class Sword : MonoBehaviour
             isGodSword = false;
         }
     }
+    IEnumerator ShowMessageCoroutine(GameObject recipeUi, float timeToShow)
+    {
 
+        // Show the ui
+        recipeUi.SetActive(true);
+
+        //Wait for X seconds
+        yield return new WaitForSecondsRealtime(timeToShow);
+
+        // Hide the ui
+        recipeUi.SetActive(false);
+    }
 }
