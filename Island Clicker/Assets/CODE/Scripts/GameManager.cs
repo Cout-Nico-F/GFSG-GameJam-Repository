@@ -55,12 +55,36 @@ public class GameManager : MonoBehaviour
 
         Stats.Experience += enemy.Exp;
         uiManager.UpdateText();
-        //lootManager.DropLoot ?
-        //Decide what to drop based on the type of enemy ?
+
+        AssignLootStats(enemy);
+        uiManager.UpdateIcons(enemy.EnemyType);
+
 
         UnlockResourcesByExperience();
     }
 
+    private void AssignLootStats(Enemy enemy)
+    {
+        switch (enemy.EnemyType)
+        {
+            case GameManager.EnemyTypes.Slime:
+                break;
+            case GameManager.EnemyTypes.Wood:
+                Stats.Wood += enemy.LootAmmount;
+                break;
+            case GameManager.EnemyTypes.Rock:
+                Stats.Rock += enemy.LootAmmount;
+                break;
+            case GameManager.EnemyTypes.Water:
+                Stats.Water += enemy.LootAmmount;
+                break;
+            case GameManager.EnemyTypes.Crystal:
+                Stats.Crystal += enemy.LootAmmount;
+                break;
+            default:
+                break;
+        }
+    }
     public void ActivateSpawners(EnemyTypes enemy)
     {
         switch (enemy)

@@ -9,6 +9,8 @@ public class Wood : Enemy
         this.exp = 25;
         this.health = 60;
         this.speed = 140f;
+        this.lootAmmount = 4;
+        this.enemyType = GameManager.EnemyTypes.Wood;
     }
 
     // Update is called once per frame
@@ -19,7 +21,7 @@ public class Wood : Enemy
 
     public override void DropMaterial()
     {
-        throw new System.NotImplementedException();
+        
     }
 
     public override void Move()

@@ -9,6 +9,8 @@ public class Rock : Enemy
         this.exp = 65;
         this.health = 180;
         this.speed = 120f;
+        this.lootAmmount = 1;
+        this.enemyType = GameManager.EnemyTypes.Rock;
     }
 
     // Update is called once per frame
