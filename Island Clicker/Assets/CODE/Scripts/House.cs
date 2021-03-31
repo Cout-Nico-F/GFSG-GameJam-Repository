@@ -1,18 +1,25 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class House : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private int health = 6;
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        health--;
+        //updateHealthUI;
+        if (health <= 0)
+        {
+            Destroyed();
+        }
+    }
+    private void Destroyed()
+    {
+        //Avisar al GM que la casa fue destruida
+        //cambiar el sprite de la casa
+        Debug.LogWarning("House has been destroyed!");
     }
 }
