@@ -15,7 +15,7 @@ public class UiManager : MonoBehaviour
     //le avisan que cambio y tiene un metodo que va a decir si tenes 100 madera = 10 maderitas 
 
     private int maxWood = 90;
-    private int maxRock = 36;
+    private int maxRock = 28;
     private int maxWater = 225;
     private int maxCrystals = 18;
 
@@ -62,19 +62,19 @@ public class UiManager : MonoBehaviour
                 }
                 break;
             case GameManager.EnemyTypes.Rock:
-                if (Stats.Rock >= rockAmmountPerIcon * activeRockIcons.Count + 1)
+                if (Stats.Rock >= rockAmmountPerIcon * (activeRockIcons.Count + 1))
                 {
                     ActivateIcon(activeRockIcons, inactiveRockIcons);
                 }
                 break;
             case GameManager.EnemyTypes.Water:
-                if (Stats.Water >= waterAmmountPerIcon * activeWaterIcons.Count + 1)
+                if (Stats.Water >= waterAmmountPerIcon * (activeWaterIcons.Count + 1))
                 {
                     ActivateIcon(activeWaterIcons, inactiveWaterIcons);
                 }
                 break;
             case GameManager.EnemyTypes.Crystal:
-                if (Stats.Crystal >= crystalAmmountPerIcon * activeCrystalIcons.Count + 1)
+                if (Stats.Crystal >= crystalAmmountPerIcon * (activeCrystalIcons.Count + 1))
                 {
                     ActivateIcon(activeCrystalIcons, inactiveCrystalIcons);
                 }
