@@ -19,4 +19,9 @@ public abstract class Enemy : MonoBehaviour
     public abstract void Die();
     public abstract void OnMouseEnter();
     public abstract void OnMouseDown();
+
+    public void OnHouseTouch()
+    {
+        Destroy(this.gameObject); //TODO: if we use object pooling, remember to change here too.
+    }
 }

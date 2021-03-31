@@ -15,6 +15,8 @@ public class House : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        collision.GetComponent<Enemy>().OnHouseTouch(); //Enemies destroyed on contact.
+
         health--;
         uiManager.UpdateHealth(health);
         if (health <= 0)
