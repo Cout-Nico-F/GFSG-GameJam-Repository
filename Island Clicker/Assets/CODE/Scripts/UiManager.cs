@@ -16,28 +16,30 @@ public class UiManager : MonoBehaviour
 
 
     TextMeshProUGUI tmp;
-    private int lastWood;
-    private int multiplicator;
+    private int woodMultiplicator, rockMultiplicator, waterMultiplicator, crystalMultiplicator;
 
-    private int woodAmmountPerIcon;
-    private int rockAmmountPerIcon;
+    private int woodAmmountPerIcon = 10;
+    private int rockAmmountPerIcon = 5;
     private int waterAmmountPerIcon;
     private int crystalAmmountPerIcon;
 
     [SerializeField]
-    private List<GameObject> woodIcons , rockIcons, waterIcons , CrystalIcons;
-    private List<GameObject> woodIconsAll, rockIconsAll, waterIconsAll, CrystalIconsAll;
+    private List<GameObject> woodIcons , rockIcons, waterIcons , crystalIcons;
+    private List<GameObject> woodIconsAll, rockIconsAll, waterIconsAll, crystalIconsAll;
 
 
     private void Awake()
     {
         tmp = GetComponent<TextMeshProUGUI>();
-        multiplicator = 1;
+        woodMultiplicator = 1;
+        rockMultiplicator = 1;
+        waterMultiplicator = 1;
+        crystalMultiplicator = 1;
 
         woodIconsAll = woodIcons;
         rockIconsAll = rockIcons;
         waterIconsAll = waterIcons;
-        CrystalIconsAll = CrystalIcons;
+        crystalIconsAll = crystalIcons;
 
     }
     
@@ -53,19 +55,32 @@ public class UiManager : MonoBehaviour
             case GameManager.EnemyTypes.Slime:
                 break;
             case GameManager.EnemyTypes.Wood:                
-                if (Stats.Wood >= woodAmmountPerIcon * multiplicator)
+                if (Stats.Wood >= woodAmmountPerIcon * woodMultiplicator)
                 {
-                    multiplicator++;
+                    woodMultiplicator++;
                     PickOne(woodIcons);
-                    //elegir un random de la lista
-                    //borrar de la lista el gameobject ya activado
                 }
                 break;
             case GameManager.EnemyTypes.Rock:
+                if (Stats.Rock >= rockAmmountPerIcon * rockMultiplicator)
+                {
+                    rockMultiplicator++;
+                    PickOne(rockIcons);
+                }
                 break;
             case GameManager.EnemyTypes.Water:
+                if (Stats.Water >= waterAmmountPerIcon * waterMultiplicator)
+                {
+                    waterMultiplicator++;
+                    PickOne(waterIcons);
+                }
                 break;
             case GameManager.EnemyTypes.Crystal:
+                if (Stats.Crystal >= crystalAmmountPerIcon * crystalMultiplicator)
+                {
+                    crystalMultiplicator++;
+                    PickOne(crystalIcons);
+                }
                 break;
             default:
                 break;
@@ -76,6 +91,6 @@ public class UiManager : MonoBehaviour
     {
         int index =(int) UnityEngine.Random.Range(0, icons.Count);
         icons[index].SetActive(true);
-       // icons[index].
+        icons.RemoveAt(index);
     }
 }
