@@ -30,6 +30,8 @@ public class UiManager : MonoBehaviour
     private List<GameObject> inactiveWoodIcons, inactiveRockIcons, inactiveWaterIcons, inactiveCrystalIcons;
     private List<GameObject> activeWoodIcons, activeRockIcons, activeWaterIcons, activeCrystalIcons;
 
+    private GameObject  hearts1, hearts2, hearts3, hearts4, hearts5, hearts6;
+
     public int MaxWood { get => maxWood; }
     public int MaxRock { get => maxRock; }
     public int MaxWater { get => maxWater; }
@@ -78,6 +80,38 @@ public class UiManager : MonoBehaviour
                 {
                     ActivateIcon(activeCrystalIcons, inactiveCrystalIcons);
                 }
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void UpdateHealth( int health )
+    {
+        switch (health)
+        {
+            case 0:
+                hearts1.SetActive(false);
+                break;
+            case 1:
+                hearts2.SetActive(false);
+                hearts1.SetActive(true);
+                break;
+            case 2:
+                hearts3.SetActive(false);
+                hearts2.SetActive(true);
+                break;
+            case 3:
+                hearts4.SetActive(false);
+                hearts3.SetActive(true);
+                break;
+            case 4:
+                hearts5.SetActive(false);
+                hearts4.SetActive(true);
+                break;
+            case 5:
+                hearts6.SetActive(false);
+                hearts5.SetActive(true);
                 break;
             default:
                 break;
