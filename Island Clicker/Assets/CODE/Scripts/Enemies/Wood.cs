@@ -33,6 +33,11 @@ public class Wood : Enemy
     {
         //tell the game manager that you died.
         StaticReference.GameManager.EnemyDied(this);
+
+        string[] audioNames = { "WoodDeath1", "WoodDeath2", "WoodDeath3", "WoodDeath4"};
+        int index = UnityEngine.Random.Range(0, audioNames.Length);
+        AudioManager.instance.Play(audioNames[index]);
+
         Destroy(this.gameObject); //TODO: could apply object pooling technique if we have time
     }
 
@@ -47,10 +52,14 @@ public class Wood : Enemy
     public override void OnMouseDown()
     {
         health -= StaticReference.Sword.Damage;
+
+        string[] audioNames = { "WoodHit1", "WoodHit2", "WoodHit3", "WoodHit4" };
+        int index = UnityEngine.Random.Range(0, audioNames.Length);
+        AudioManager.instance.Play(audioNames[index]);
+
         if (health <= 0)
         {
             Die();
         }
-        //trigger animations and sound?
     }
 }

@@ -33,6 +33,11 @@ public class Rock : Enemy
     {
         //tell the game manager that you died.
         StaticReference.GameManager.EnemyDied(this);
+
+        string[] audioNames = { "RockDeath1", "RockDeath2", "RockDeath3", "RockDeath4" };
+        int index = UnityEngine.Random.Range(0, audioNames.Length);
+        AudioManager.instance.Play(audioNames[index]);
+
         Destroy(this.gameObject); //TODO: could apply object pooling technique if we have time
     }
 
@@ -47,6 +52,11 @@ public class Rock : Enemy
     public override void OnMouseDown()
     {
         health -= StaticReference.Sword.Damage;
+
+        string[] audioNames = { "RockHit1", "RockHit2", "RockHit3", "RockHit4" };
+        int index = UnityEngine.Random.Range(0, audioNames.Length);
+        AudioManager.instance.Play(audioNames[index]);
+
         if (health <= 0)
         {
             Die();

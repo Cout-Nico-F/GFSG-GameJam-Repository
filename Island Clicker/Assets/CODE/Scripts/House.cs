@@ -19,6 +19,11 @@ public class House : MonoBehaviour
 
         health--;
         uiManager.UpdateHealth(health);
+
+        string[] audioNames = { "HouseAttacked1", "HouseAttacked2"};
+        int index = UnityEngine.Random.Range(0, audioNames.Length);
+        AudioManager.instance.Play(audioNames[index]);
+
         if (health <= 0)
         {
             Destroyed();
@@ -28,6 +33,7 @@ public class House : MonoBehaviour
     {
         //Avisar al GM que la casa fue destruida
         StaticReference.GameManager.HouseDestroyed();
+        AudioManager.instance.Play("HouseDestroyed");
         //cambiar el sprite de la casa
         Debug.LogWarning("House has been destroyed!");
     }

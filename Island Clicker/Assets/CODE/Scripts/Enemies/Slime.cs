@@ -47,7 +47,9 @@ public class Slime : Enemy
     {
         health -= StaticReference.Sword.Damage;
 
-        StaticReference.GameManager.EnemyHit(this);
+        string[] audioNames = { "SlimeHit1", "SlimeHit2", "SlimeHit3", "SlimeHit4", "SlimeHit5" };
+        int index = UnityEngine.Random.Range(0, audioNames.Length);
+        AudioManager.instance.Play(audioNames[index]);
 
         if (health <= 0)
         {

@@ -63,4 +63,8 @@ public class AudioManager : MonoBehaviour
 		s.source.Stop();
 	}
 
+	public int RandomIndexFrom(string[] s)
+    {
+		return  UnityEngine.Random.Range(0, s.Length);
+    }
 }

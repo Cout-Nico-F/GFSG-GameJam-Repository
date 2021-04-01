@@ -89,6 +89,7 @@ public class GameManager : MonoBehaviour
     public void HouseDestroyed()//GameOver
     {
         uiManager.ShowGameOverUi();
+        AudioManager.instance.Play("HouseDestroyed");
     }
     public void EnemyDied(Enemy enemy)
     {
@@ -100,10 +101,6 @@ public class GameManager : MonoBehaviour
 
 
         UnlockResourcesByExperience();
-    }
-    public void EnemyHit(Enemy enemy)
-    {
-        //tell audiomanager to play the sound
     }
     private void AssignLootStats(Enemy enemy)
     {
@@ -176,6 +173,7 @@ public class GameManager : MonoBehaviour
         {
             crystals.Unlock();
             uiManager.UpdateExperienceLevel(GameManager.EnemyTypes.Crystal);
+            AudioManager.instance.Play("CrystalUnlocked");
             AudioManager.instance.Play("CrystalStar-Music");
             StartCoroutine(WaitForSecondsCoroutine(0.1f));
             AudioManager.instance.Stop("WaterStar-Music"); 
@@ -184,6 +182,7 @@ public class GameManager : MonoBehaviour
         {
             river.Unlock();
             uiManager.UpdateExperienceLevel(GameManager.EnemyTypes.Water);
+            AudioManager.instance.Play("WaterUnlocked");
             AudioManager.instance.Play("WaterStar-Music");
             StartCoroutine(WaitForSecondsCoroutine(0.1f));
             AudioManager.instance.Stop("RockStar-Music");
@@ -193,6 +192,7 @@ public class GameManager : MonoBehaviour
         {
             mountain.Unlock();
             uiManager.UpdateExperienceLevel(GameManager.EnemyTypes.Rock);
+            AudioManager.instance.Play("RockUnlocked");
             AudioManager.instance.Play("RockStar-Music");
             StartCoroutine(WaitForSecondsCoroutine(0.1f));
             AudioManager.instance.Stop("WoodStar-Music");
@@ -202,6 +202,7 @@ public class GameManager : MonoBehaviour
         {
             forest.Unlock();
             uiManager.UpdateExperienceLevel(GameManager.EnemyTypes.Wood);
+            AudioManager.instance.Play("WoodUnlocked");
             AudioManager.instance.Play("WoodStar-Music");
             StartCoroutine(WaitForSecondsCoroutine(0.1f));
             AudioManager.instance.Stop("NoStar-Music");
