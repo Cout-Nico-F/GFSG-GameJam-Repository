@@ -7,7 +7,7 @@ public class Crystals : Resource
     public Crystals()
     {
         base.isUnlocked = false;
-        base.unlockScore = 10000;
+        base.unlockScore = 8000;
     }
 
     public override void Unlock()
