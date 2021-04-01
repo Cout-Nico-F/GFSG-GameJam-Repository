@@ -8,10 +8,13 @@ public class MainMenuManager : MonoBehaviour
     {
 
         ResetAll();
+        AudioManager.instance.Play("MainMenu-Music");
 
     }
     public void Play()
     {
+        AudioManager.instance.Stop("MainMenu-Music");
+        AudioManager.instance.Play("NoStar-Music");
         UnityEngine.SceneManagement.SceneManager.LoadScene("Play");
     }
     private void ResetAll()
@@ -27,5 +30,12 @@ public class MainMenuManager : MonoBehaviour
         StaticReference.Target = null;
 
         Enemy.speedMultiplier = 1;
+
+        AudioSource[] allAudioSources;
+        allAudioSources = FindObjectsOfType<AudioSource>();
+        foreach (var asource in allAudioSources)
+        {
+            asource.Stop();
+        }
     }
 }

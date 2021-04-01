@@ -9,6 +9,7 @@ public abstract class Enemy : MonoBehaviour
     public static float speedMultiplier = 1;
     protected int exp;
     protected int lootAmmount;
+
     protected GameManager.EnemyTypes enemyType;
     public int Exp { get => exp; }
     public GameManager.EnemyTypes EnemyType { get => enemyType; }

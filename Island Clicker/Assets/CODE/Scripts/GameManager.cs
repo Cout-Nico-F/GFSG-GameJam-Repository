@@ -64,7 +64,6 @@ public class GameManager : MonoBehaviour
     public void ToMainMenu()
     {
         Time.timeScale = 1;
-
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
     public void Pause()
@@ -101,6 +100,10 @@ public class GameManager : MonoBehaviour
 
 
         UnlockResourcesByExperience();
+    }
+    public void EnemyHit(Enemy enemy)
+    {
+        //tell audiomanager to play the sound
     }
     private void AssignLootStats(Enemy enemy)
     {
@@ -173,24 +176,43 @@ public class GameManager : MonoBehaviour
         {
             crystals.Unlock();
             uiManager.UpdateExperienceLevel(GameManager.EnemyTypes.Crystal);
+            AudioManager.instance.Play("CrystalStar-Music");
+            StartCoroutine(WaitForSecondsCoroutine(0.1f));
+            AudioManager.instance.Stop("WaterStar-Music"); 
         }
         else if (Stats.Experience > river.ActivationScore && river.ActiveFlag == false)
         {
             river.Unlock();
             uiManager.UpdateExperienceLevel(GameManager.EnemyTypes.Water);
+            AudioManager.instance.Play("WaterStar-Music");
+            StartCoroutine(WaitForSecondsCoroutine(0.1f));
+            AudioManager.instance.Stop("RockStar-Music");
+
         }
         else if (Stats.Experience > mountain.ActivationScore && mountain.ActiveFlag == false)
         {
             mountain.Unlock();
             uiManager.UpdateExperienceLevel(GameManager.EnemyTypes.Rock);
+            AudioManager.instance.Play("RockStar-Music");
+            StartCoroutine(WaitForSecondsCoroutine(0.1f));
+            AudioManager.instance.Stop("WoodStar-Music");
         }
         else
         if (Stats.Experience > forest.ActivationScore && forest.ActiveFlag == false)
         {
             forest.Unlock();
             uiManager.UpdateExperienceLevel(GameManager.EnemyTypes.Wood);
+            AudioManager.instance.Play("WoodStar-Music");
+            StartCoroutine(WaitForSecondsCoroutine(0.1f));
+            AudioManager.instance.Stop("NoStar-Music");
         }
     }
+    IEnumerator WaitForSecondsCoroutine( float seconds)
+    {
+        //Wait for X seconds
+        yield return new WaitForSecondsRealtime(seconds);
+    }
+    //Developer tools ( God Mode )
     public void HealthGodMode()
     {
         if (!isHealthGodMode)
@@ -268,5 +290,5 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
+    
 }

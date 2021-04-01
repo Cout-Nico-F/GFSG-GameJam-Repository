@@ -46,6 +46,9 @@ public class Slime : Enemy
     public override void OnMouseDown()
     {
         health -= StaticReference.Sword.Damage;
+
+        StaticReference.GameManager.EnemyHit(this);
+
         if (health <= 0)
         {
             Die();
