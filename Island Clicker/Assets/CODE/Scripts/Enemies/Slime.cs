@@ -17,10 +17,13 @@ public class Slime : Enemy
     {
         Move();
     }
-
-    public override void DropMaterial()
+    private void Start()
     {
-        throw new System.NotImplementedException();
+        int random = UnityEngine.Random.Range(1, 10);
+        if (random > 6)
+        {
+            AudioManager.instance.Play("SlimeLaugh1");
+        }
     }
 
     public override void Move()

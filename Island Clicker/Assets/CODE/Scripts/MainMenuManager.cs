@@ -14,9 +14,8 @@ public class MainMenuManager : MonoBehaviour
     public void Play()
     {
         AudioManager.instance.Stop("MainMenu-Music");
-        AudioManager.instance.Play("NoStar-Music");
-        AudioManager.instance.Play("Ambience");
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Play");
+        AudioManager.instance.Play("Comic-Music");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Comic");
     }
     private void ResetAll()
     {

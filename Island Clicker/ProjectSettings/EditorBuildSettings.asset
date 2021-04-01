@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/CODE/Scenes/MainMenu.unity
     guid: 6867fd8148d0c3a4da369455cd3a1d3e
   - enabled: 1
+    path: Assets/CODE/Scenes/Comic.unity
+    guid: 030fdd9957874124aaa1ef144430e33d
+  - enabled: 1
     path: Assets/CODE/Scenes/Play.unity
     guid: afcc297ce8ba06742902fc6c471aed7d
   m_configObjects: {}

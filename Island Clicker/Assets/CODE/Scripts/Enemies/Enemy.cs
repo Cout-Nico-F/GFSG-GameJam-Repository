@@ -15,7 +15,6 @@ public abstract class Enemy : MonoBehaviour
     public GameManager.EnemyTypes EnemyType { get => enemyType; }
     public int LootAmmount { get => lootAmmount; }
 
-    public abstract void DropMaterial();
     public abstract void Move();
     public abstract void Die();
     public abstract void OnMouseEnter();

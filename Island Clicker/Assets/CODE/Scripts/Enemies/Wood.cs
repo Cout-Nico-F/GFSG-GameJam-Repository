@@ -19,9 +19,13 @@ public class Wood : Enemy
         Move();
     }
 
-    public override void DropMaterial()
+    private void Start()
     {
-        
+        int random = UnityEngine.Random.Range(1, 10);
+        if (random > 6)
+        {
+            AudioManager.instance.Play("WoodLaugh1");
+        }
     }
 
     public override void Move()
