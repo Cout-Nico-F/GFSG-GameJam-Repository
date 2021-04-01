@@ -158,7 +158,6 @@ public class Sword : MonoBehaviour
     }
     IEnumerator ShowMessageCoroutine(GameObject recipeUi, float timeToShow)
     {
-
         // Show the ui
         recipeUi.SetActive(true);
 
