@@ -23,11 +23,19 @@ public class UiManager : MonoBehaviour
     private int waterAmmountPerIcon = 25;
     private int crystalAmmountPerIcon = 2;
 
+    [InspectorName("Material Icons")]
     [SerializeField]
     private List<GameObject> inactiveWoodIcons, inactiveRockIcons, inactiveWaterIcons, inactiveCrystalIcons;
     private List<GameObject> activeWoodIcons, activeRockIcons, activeWaterIcons, activeCrystalIcons;
+    
     [SerializeField]
     private GameObject  hearts1, hearts2, hearts3, hearts4, hearts5, hearts6;
+   
+    [SerializeField]
+    private GameObject woodStar, stoneStar, waterStar, crystalStar;
+    
+    [SerializeField]
+    private GameObject pausePanel;
 
     public int MaxWood { get => maxWood; }
     public int MaxRock { get => maxRock; }
@@ -42,9 +50,34 @@ public class UiManager : MonoBehaviour
         activeWaterIcons = new List<GameObject>();
     }
 
-    public void UpdateExperience()
+    public void ShowPauseUi(bool value)
     {
-        //tmp.text = "Experience: " + Stats.Experience;
+        pausePanel.SetActive(value);
+    }
+    public void UpdateExperienceLevel(GameManager.EnemyTypes enemyType)
+    {
+        switch (enemyType)
+        {
+            case GameManager.EnemyTypes.Slime:
+                break;
+            case GameManager.EnemyTypes.Wood:
+                woodStar.SetActive(true);
+                break;
+            case GameManager.EnemyTypes.Rock:
+                woodStar.SetActive(false);
+                stoneStar.SetActive(true);
+                break;
+            case GameManager.EnemyTypes.Water:
+                stoneStar.SetActive(false);
+                waterStar.SetActive(true);
+                break;
+            case GameManager.EnemyTypes.Crystal:
+                waterStar.SetActive(false);
+                crystalStar.SetActive(true);
+                break;
+            default:
+                break;
+        }
     }
 
     public void UpdateIcons(GameManager.EnemyTypes enemyType)

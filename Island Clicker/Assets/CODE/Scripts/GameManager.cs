@@ -67,11 +67,13 @@ public class GameManager : MonoBehaviour
         {
             Time.timeScale = 0;
             isPaused = true;
+            uiManager.ShowPauseUi(true);
         }
         else
         {
             Time.timeScale = 1;
             isPaused = false;
+            uiManager.ShowPauseUi(false);
         }
     }
 
@@ -80,7 +82,6 @@ public class GameManager : MonoBehaviour
     {
 
         Stats.Experience += enemy.Exp;
-        uiManager.UpdateExperience();
 
         AssignLootStats(enemy);
         uiManager.UpdateIcons(enemy.EnemyType);
@@ -160,19 +161,23 @@ public class GameManager : MonoBehaviour
         if (Stats.Experience >= crystals.ActivationScore && crystals.ActiveFlag == false)
         {
             crystals.Unlock();
+            uiManager.UpdateExperienceLevel(GameManager.EnemyTypes.Crystal);
         }
         else if (Stats.Experience > river.ActivationScore && river.ActiveFlag == false)
         {
             river.Unlock();
+            uiManager.UpdateExperienceLevel(GameManager.EnemyTypes.Water);
         }
         else if (Stats.Experience > mountain.ActivationScore && mountain.ActiveFlag == false)
         {
             mountain.Unlock();
+            uiManager.UpdateExperienceLevel(GameManager.EnemyTypes.Rock);
         }
         else
         if (Stats.Experience > forest.ActivationScore && forest.ActiveFlag == false)
         {
             forest.Unlock();
+            uiManager.UpdateExperienceLevel(GameManager.EnemyTypes.Wood);
         }
     }
 
