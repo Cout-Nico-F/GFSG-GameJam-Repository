@@ -767,22 +767,22 @@ PrefabInstance:
     - target: {fileID: 7693214957992538982, guid: 199cbfdaf70fb4e4184d6b92205db003,
         type: 3}
       propertyPath: sounds.Array.data[75].volume
-      value: 0.6
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 7693214957992538982, guid: 199cbfdaf70fb4e4184d6b92205db003,
         type: 3}
       propertyPath: sounds.Array.data[76].volume
-      value: 0.6
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 7693214957992538982, guid: 199cbfdaf70fb4e4184d6b92205db003,
         type: 3}
       propertyPath: sounds.Array.data[77].volume
-      value: 0.6
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 7693214957992538982, guid: 199cbfdaf70fb4e4184d6b92205db003,
         type: 3}
       propertyPath: sounds.Array.data[78].volume
-      value: 0.6
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 7693214957992538982, guid: 199cbfdaf70fb4e4184d6b92205db003,
         type: 3}

@@ -21,7 +21,7 @@ public class Water : Enemy
     private void Start()
     {
         int random = UnityEngine.Random.Range(1, 10);
-        if (random > 6)
+        if (random > 7)
         {
             AudioManager.instance.Play("WaterLaugh1");
         }

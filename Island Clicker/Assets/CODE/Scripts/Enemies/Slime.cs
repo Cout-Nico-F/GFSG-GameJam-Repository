@@ -20,7 +20,7 @@ public class Slime : Enemy
     private void Start()
     {
         int random = UnityEngine.Random.Range(1, 10);
-        if (random > 6)
+        if (random > 7)
         {
             AudioManager.instance.Play("SlimeLaugh1");
         }
@@ -36,7 +36,7 @@ public class Slime : Enemy
         //tell the game manager that you died.
         StaticReference.GameManager.EnemyDied(this);
 
-        string[] audioNames = { "SlimeDeath1", "SlimeDeath2", "SlimeDeath3", "SlimeDeath4", "SlimeDeath5" };
+        string[] audioNames = { "SlimeDeath1", "SlimeDeath2", "SlimeDeath3", "SlimeDeath4" };
         int index = UnityEngine.Random.Range(0, audioNames.Length);
         AudioManager.instance.Play(audioNames[index]);
 

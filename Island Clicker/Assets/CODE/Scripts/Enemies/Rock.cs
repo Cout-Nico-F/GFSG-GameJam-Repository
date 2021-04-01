@@ -22,7 +22,7 @@ public class Rock : Enemy
     private void Start()
     {
         int random = UnityEngine.Random.Range(1, 10);
-        if (random > 6)
+        if (random > 8)
         {
             AudioManager.instance.Play("RockLaugh1");
         }
