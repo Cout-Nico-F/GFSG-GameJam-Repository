@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
     private int speedGodMode = 0;
     private float spawnGodMode = 10;
     private bool isHealthGodMode;
+    private bool isPaused;
 
 
     private void Start()
@@ -59,6 +60,21 @@ public class GameManager : MonoBehaviour
         StaticReference.Target = FindObjectOfType<House>().transform;
         StaticReference.GameManager = this;
     }
+
+    public void Pause()
+    {
+        if (!isPaused)
+        {
+            Time.timeScale = 0;
+            isPaused = true;
+        }
+        else
+        {
+            Time.timeScale = 1;
+            isPaused = false;
+        }
+    }
+
 
     public void EnemyDied(Enemy enemy)
     {
