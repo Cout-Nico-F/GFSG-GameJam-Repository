@@ -63,6 +63,8 @@ public class GameManager : MonoBehaviour
 
     public void ToMainMenu()
     {
+        Time.timeScale = 1;
+
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
     public void Pause()
@@ -79,6 +81,11 @@ public class GameManager : MonoBehaviour
             isPaused = false;
             uiManager.ShowPauseUi(false);
         }
+    }
+    public void WinGame()
+    {
+        Time.timeScale = 0;
+        uiManager.ShowWinUi();
     }
     public void HouseDestroyed()//GameOver
     {

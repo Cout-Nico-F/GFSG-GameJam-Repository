@@ -32,14 +32,14 @@ public class Antenna : MonoBehaviour
             uiManager.SpentMaterials(GameManager.EnemyTypes.Rock, rockAmount);
 
 
-            //StaticReference.GameManager.WinGame();
+            StaticReference.GameManager.WinGame();
 
 
         }
         else
         {
-            //you cant upgrade.
-            ShowMessageCoroutine(antennaRecipeUi, 5f);
+            StartCoroutine(
+                        ShowMessageCoroutine(antennaRecipeUi, 3f));
             //Animation
         }
     }
