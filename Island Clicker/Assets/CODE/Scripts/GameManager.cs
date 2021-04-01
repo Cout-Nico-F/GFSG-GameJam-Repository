@@ -6,13 +6,12 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
-    private int speedGodMode = 0;
-    private float spawnGodMode = 10;
+  
     //Resources
     Forest forest;
     Mountain mountain;
     River river;
-    Crystals crystal;
+    Crystals crystals;
     //UI
     UiManager uiManager;
     //Enemy
@@ -35,13 +34,23 @@ public class GameManager : MonoBehaviour
     GameObject waterSpawner;
     [SerializeField]
     GameObject crystalSpawner;
+    [Space]
+    [SerializeField]
+    GameObject house;
+
+    private int speedGodMode = 0;
+    private float spawnGodMode = 10;
+    private bool isHealthGodMode;
+
 
     private void Start()
     {
         forest = FindObjectOfType<Forest>();
         mountain = FindObjectOfType<Mountain>();
         river = FindObjectOfType<River>();
-        crystal = FindObjectOfType<Crystals>();
+        crystals = FindObjectOfType<Crystals>();
+
+        house = FindObjectOfType<House>().gameObject;
 
         uiManager = FindObjectOfType<UiManager>();
 
@@ -132,9 +141,9 @@ public class GameManager : MonoBehaviour
 
     private void UnlockResourcesByExperience()
     {
-        if (Stats.Experience >= crystal.ActivationScore && crystal.ActiveFlag == false)
+        if (Stats.Experience >= crystals.ActivationScore && crystals.ActiveFlag == false)
         {
-            crystal.Unlock();
+            crystals.Unlock();
         }
         else if (Stats.Experience > river.ActivationScore && river.ActiveFlag == false)
         {
@@ -151,6 +160,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void HealthGodMode()
+    {
+        if (!isHealthGodMode)
+        {
+            house.GetComponent<BoxCollider2D>().enabled = false;
+            isHealthGodMode = true;
+        }
+        else
+        {
+            house.GetComponent<BoxCollider2D>().enabled = true;
+            isHealthGodMode = false;
+        }
+    }
     public void SpeedGodMode()
     {
         if (speedGodMode < 5)
