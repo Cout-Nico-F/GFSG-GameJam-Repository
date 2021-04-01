@@ -60,8 +60,7 @@ public class Sword : MonoBehaviour
         }
         else
         {
-            //you cant upgrade.
-            ShowMessageCoroutine(stoneRecipeUi, 4f);
+            StartCoroutine(ShowMessageCoroutine(stoneRecipeUi, 1f));
             //Animation
         }
     }
@@ -87,7 +86,7 @@ public class Sword : MonoBehaviour
         else
         {
             //you cant upgrade.
-            ShowMessageCoroutine(waterRecipeUi, 6f);
+            StartCoroutine(ShowMessageCoroutine(waterRecipeUi, 6f));
             //Animation
         }
     }
@@ -113,7 +112,7 @@ public class Sword : MonoBehaviour
         else
         {
             //you cant upgrade.
-            ShowMessageCoroutine(holyWaterRecipeUi, 7f);
+            StartCoroutine(ShowMessageCoroutine(holyWaterRecipeUi, 7f));
             //Animation
         }
     }
@@ -137,7 +136,7 @@ public class Sword : MonoBehaviour
         else
         {
             //you cant upgrade.
-            ShowMessageCoroutine(crystalRecipeUi, 5f);
+            StartCoroutine(ShowMessageCoroutine(crystalRecipeUi, 5f));
             //Animation
         }
     }
