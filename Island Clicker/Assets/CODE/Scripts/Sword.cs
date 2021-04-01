@@ -39,6 +39,7 @@ public class Sword : MonoBehaviour
         else
         {
             //mostrar ui durante X segundos
+            AudioManager.instance.Play("Sword_Error");
             StartCoroutine(ShowMessageCoroutine(woodRecipeUi, 0.75f));
             //Animation?
         }
@@ -60,6 +61,7 @@ public class Sword : MonoBehaviour
         }
         else
         {
+            AudioManager.instance.Play("Sword_Error");
             StartCoroutine(ShowMessageCoroutine(stoneRecipeUi, 1f));
             //Animation
         }
@@ -85,7 +87,7 @@ public class Sword : MonoBehaviour
         }
         else
         {
-            //you cant upgrade.
+            AudioManager.instance.Play("Sword_Error");
             StartCoroutine(ShowMessageCoroutine(waterRecipeUi, 2f));
             //Animation
         }
@@ -111,7 +113,7 @@ public class Sword : MonoBehaviour
         }
         else
         {
-            //you cant upgrade.
+            AudioManager.instance.Play("Sword_Error");
             StartCoroutine(ShowMessageCoroutine(holyWaterRecipeUi, 3f));
             //Animation
         }
@@ -135,7 +137,7 @@ public class Sword : MonoBehaviour
         }
         else
         {
-            //you cant upgrade.
+            AudioManager.instance.Play("Sword_Error");
             StartCoroutine(ShowMessageCoroutine(crystalRecipeUi, 3f));
             //Animation
         }

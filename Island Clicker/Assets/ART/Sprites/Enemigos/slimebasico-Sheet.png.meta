@@ -1,16 +1,19 @@
 fileFormatVersion: 2
-guid: bdb9d63f8ce27894882dcdb479dd87e2
+guid: 8c673c61441133449b12076e2df9993f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4467509654420432306
-    second: enemigomadera-Sheet_0
+      213: -6862788871037541360
+    second: slimebasico-Sheet_0
   - first:
-      213: -4819909043200317830
-    second: enemigomadera-Sheet_1
+      213: 2858369874023022657
+    second: slimebasico-Sheet_1
   - first:
-      213: 164645892339007921
-    second: enemigomadera-Sheet_2
+      213: -7462415627797778320
+    second: slimebasico-Sheet_2
+  - first:
+      213: -7041362686793392508
+    second: slimebasico-Sheet_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -120,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: enemigomadera-Sheet_0
+      name: slimebasico-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -134,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4a54a1a3a73002c0800000000000000
-      internalID: -4467509654420432306
+      spriteID: 014ad45e1e972c0a0800000000000000
+      internalID: -6862788871037541360
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemigomadera-Sheet_1
+      name: slimebasico-Sheet_1
       rect:
         serializedVersion: 2
         x: 32
@@ -155,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a762a5e134e3c1db0800000000000000
-      internalID: -4819909043200317830
+      spriteID: 14002d19148faa720800000000000000
+      internalID: 2858369874023022657
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemigomadera-Sheet_2
+      name: slimebasico-Sheet_2
       rect:
         serializedVersion: 2
         x: 64
@@ -176,8 +179,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b108961190f84200800000000000000
-      internalID: 164645892339007921
+      spriteID: 0703aca268c207890800000000000000
+      internalID: -7462415627797778320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slimebasico-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48e5dfe61fd084e90800000000000000
+      internalID: -7041362686793392508
       vertices: []
       indices: 
       edges: []
