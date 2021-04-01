@@ -16,15 +16,64 @@ public class Sword : MonoBehaviour
     [Space]
     [SerializeField]
     private GameObject antennaRecipeUi;
+    [SerializeField]
+    private Animator woodSword, stoneSword, waterSword, holyWaterSword, crystalSword;
 
-    private void Awake()
-    {
-        uiManager = FindObjectOfType<UiManager>();
-    }
+    
     public int Damage { get => damage; }
 
     private bool isGodSword;
     private int lastDamage;
+
+    bool islevel0, islevel1, islevel2, islevel3, islevel4, islevel5;
+
+    private void Awake()
+    {
+        uiManager = FindObjectOfType<UiManager>();
+        islevel0 = true;
+    }
+    private void Update()
+    {
+        if (Stats.Wood > 10 && islevel0)
+        {
+            islevel0 = false;
+            islevel1 = true;
+            AudioManager.instance.Play("SwordLvlUpReady");
+            //Sword ready animations
+            woodSword.SetBool("isReady", true);
+        }
+        if (Stats.Wood >= 30 && Stats.Rock >= 8 && islevel1)
+        {
+            islevel1 = false;
+            islevel2 = true;
+            AudioManager.instance.Play("SwordLvlUpReady");
+            stoneSword.SetBool("isReady", true);
+
+        }
+        if (Stats.Rock >= 8 && Stats.Wood >= 30 && Stats.Water >= 50 && islevel2)
+        {
+            islevel2 = false;
+            islevel3 = true;
+            AudioManager.instance.Play("SwordLvlUpReady");
+            waterSword.SetBool("isReady", true);
+
+        }
+        if (Stats.Rock >= 16 && Stats.Wood >= 90 && Stats.Water >= 225 && islevel3)
+        {
+            islevel3 = false;
+            islevel4 = true;
+            AudioManager.instance.Play("SwordLvlUpReady");
+            holyWaterSword.SetBool("isReady", true);
+
+        }
+        if (Stats.Water >= 150 && Stats.Crystal >= 6 && islevel4)
+        {
+            islevel4 = false;
+            AudioManager.instance.Play("SwordLvlUpReady");
+            crystalSword.SetBool("isReady", true);
+        }
+    }
+
     public void WoodUpgrade()
     {
         int woodAmount = 10;

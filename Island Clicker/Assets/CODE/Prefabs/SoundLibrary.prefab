@@ -119,7 +119,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: HouseDestroyed
     clip: {fileID: 8300000, guid: 321fe9099e22be243a9b5e975f7fa01a, type: 3}
-    volume: 0.5
+    volume: 0.6
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -587,7 +587,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Ambience
     clip: {fileID: 8300000, guid: fdb9cfbc89e31e74a94a1d6c3a02e4c2, type: 3}
-    volume: 0.25
+    volume: 0.2
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -663,7 +663,7 @@ MonoBehaviour:
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
-    loop: 0
+    loop: 1
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: Sword_Error
@@ -686,7 +686,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: HouseAttacked3
     clip: {fileID: 8300000, guid: 54adb26e926fb1645912aeaebce3f2f7, type: 3}
-    volume: 0.4
+    volume: 0.6
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -704,6 +704,123 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: HouseAttacked5
     clip: {fileID: 8300000, guid: 5222d112413f2f44e97518c9359a57f2, type: 3}
+    volume: 0.6
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Comic-Music
+    clip: {fileID: 8300000, guid: 173b9f873ec0c994ca44aaef7136c768, type: 3}
+    volume: 0.6
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: WoodLaugh1
+    clip: {fileID: 8300000, guid: 3f2637843eb2b4942ad940bbbc94c3a5, type: 3}
+    volume: 0.2
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: RockLaugh1
+    clip: {fileID: 8300000, guid: e174082131ceda141808896657f4fdc6, type: 3}
+    volume: 0.2
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: SlimeLaugh1
+    clip: {fileID: 8300000, guid: 6ca5f70e246e88249bdbf5ee7e7486bd, type: 3}
+    volume: 0.2
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: CrystalLaugh1
+    clip: {fileID: 8300000, guid: 1b909b9f02fd3ac4bb36f488e5bc761d, type: 3}
+    volume: 0.2
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: SwordGlassLvlUp
+    clip: {fileID: 8300000, guid: a4b4f7a36b5f03142adef7dc2de81cc3, type: 3}
+    volume: 0.6
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: SwordHolyWaterLvlUp
+    clip: {fileID: 8300000, guid: c5544815133e93f438aeef5d68249311, type: 3}
+    volume: 0.6
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: SwordRockLvlUp
+    clip: {fileID: 8300000, guid: 39efc81cb7a45c14cb460fde5099719f, type: 3}
+    volume: 0.6
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: SwordWoodLvlUp
+    clip: {fileID: 8300000, guid: 359d7942144129e4b98c959c7d495fbd, type: 3}
+    volume: 0.6
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: SwordLvlUpReady
+    clip: {fileID: 8300000, guid: cac66297991a3a54ba52544ab710efc8, type: 3}
+    volume: 0.6
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: SwordLvlUpReminder
+    clip: {fileID: 8300000, guid: c97c3b3cbdfc82b4898ee50cb31ee034, type: 3}
+    volume: 0.6
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: SwordGlassLvlUp
+    clip: {fileID: 8300000, guid: a4b4f7a36b5f03142adef7dc2de81cc3, type: 3}
+    volume: 0.6
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: SwordGlassLvlUp
+    clip: {fileID: 8300000, guid: a4b4f7a36b5f03142adef7dc2de81cc3, type: 3}
     volume: 0.6
     volumeVariance: 0
     pitch: 1

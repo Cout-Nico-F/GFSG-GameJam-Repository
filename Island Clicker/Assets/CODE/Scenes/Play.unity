@@ -7963,6 +7963,11 @@ MonoBehaviour:
   holyWaterRecipeUi: {fileID: 2140244892}
   crystalRecipeUi: {fileID: 1239164474}
   antennaRecipeUi: {fileID: 0}
+  woodSword: {fileID: 1342397228}
+  stoneSword: {fileID: 1738180422}
+  waterSword: {fileID: 1395443587}
+  holyWaterSword: {fileID: 988787049}
+  crystalSword: {fileID: 1149273809}
 --- !u!4 &1616717218
 Transform:
   m_ObjectHideFlags: 0

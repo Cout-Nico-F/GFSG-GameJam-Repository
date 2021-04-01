@@ -38,7 +38,7 @@ public class Crystal : Enemy
         //tell the game manager that you died.
         StaticReference.GameManager.EnemyDied(this);
 
-        string[] audioNames = { "CrystalDeath1", "CrystalDeath2", "CrystalDeath4", "CrystalDeath5" };
+        string[] audioNames = { "CrystalDeath1", "CrystalDeath2", "CrystalDeath3", "CrystalDeath4" };
         int index = UnityEngine.Random.Range(0, audioNames.Length);
         AudioManager.instance.Play(audioNames[index]);
 
