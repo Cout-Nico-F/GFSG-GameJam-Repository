@@ -30,6 +30,8 @@ public class Sword : MonoBehaviour
         int woodAmount = 10;
         if (Stats.Wood >= woodAmount)
         {
+            AudioManager.instance.Play("SwordWoodLvlUp");
+
             Stats.Wood -= woodAmount;
             damage = 30;
             uiManager.SpentMaterials(GameManager.EnemyTypes.Wood, woodAmount);
@@ -50,6 +52,9 @@ public class Sword : MonoBehaviour
         int woodAmount = 30;
         if (Stats.Wood >= woodAmount && Stats.Rock >= rockAmount)
         {
+            AudioManager.instance.Play("SwordRockLvlUp");
+
+
             Stats.Rock -= rockAmount;
             Stats.Wood -= woodAmount;
             uiManager.SpentMaterials(GameManager.EnemyTypes.Wood, woodAmount);
@@ -74,6 +79,8 @@ public class Sword : MonoBehaviour
 
         if (Stats.Wood >= 30 && Stats.Rock >= 8 && Stats.Water >= 50)
         {
+            AudioManager.instance.Play("SwordWaterLvlUp");
+
             Stats.Rock -= rockAmount;
             Stats.Wood -= woodAmount;
             Stats.Water -= waterAmount;
@@ -100,6 +107,8 @@ public class Sword : MonoBehaviour
         //Check if you have the requisites
         if (Stats.Wood >= woodAmount && Stats.Rock >= rockAmount && Stats.Water >= waterAmount)
         {
+            AudioManager.instance.Play("SwordHolyWaterLvlUp");
+
             Stats.Wood -= woodAmount;
             Stats.Rock -= rockAmount;
             Stats.Water -= waterAmount;
@@ -125,6 +134,8 @@ public class Sword : MonoBehaviour
 
         if (Stats.Crystal >= crystalAmount && Stats.Water >= waterAmount)
         {
+            AudioManager.instance.Play("SwordCrystalLvlUp");
+
             Stats.Crystal -= crystalAmount;
             Stats.Water -= waterAmount;
             uiManager.SpentMaterials(GameManager.EnemyTypes.Crystal, crystalAmount);
