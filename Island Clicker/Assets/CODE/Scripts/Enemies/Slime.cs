@@ -32,6 +32,11 @@ public class Slime : Enemy
     {
         //tell the game manager that you died.
         StaticReference.GameManager.EnemyDied(this);
+
+        string[] audioNames = { "SlimeDeath1", "SlimeDeath2", "SlimeDeath3", "SlimeDeath4", "SlimeDeath5" };
+        int index = UnityEngine.Random.Range(0, audioNames.Length);
+        AudioManager.instance.Play(audioNames[index]);
+
         Destroy(this.gameObject); //TODO: could apply object pooling technique if we have time
     }
 

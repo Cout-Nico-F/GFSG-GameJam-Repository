@@ -53,10 +53,12 @@ public class UiManager : MonoBehaviour
     public void ShowGameOverUi()
     {
         gameOverPanel.SetActive(true);
+        AudioManager.instance.Play("Defeat");
     }
     public void ShowWinUi()
     {
         winPanel.SetActive(true);
+        AudioManager.instance.Play("SOS");
     }
     public void ShowPauseUi(bool value)
     {

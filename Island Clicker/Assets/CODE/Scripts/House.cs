@@ -33,7 +33,6 @@ public class House : MonoBehaviour
     {
         //Avisar al GM que la casa fue destruida
         StaticReference.GameManager.HouseDestroyed();
-        AudioManager.instance.Play("HouseDestroyed");
         StaticReference.GameManager.HealthGodMode();//prevent damage sound to keep playing.
         Debug.LogWarning("House has been destroyed!");
     }

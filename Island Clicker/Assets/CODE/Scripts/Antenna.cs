@@ -31,10 +31,10 @@ public class Antenna : MonoBehaviour
             uiManager.SpentMaterials(GameManager.EnemyTypes.Wood, woodAmount);
             uiManager.SpentMaterials(GameManager.EnemyTypes.Rock, rockAmount);
 
-
+            AudioManager.instance.Stop("CrystalStar-Music");
+            AudioManager.instance.Play("AntennaBuild");
+            AudioManager.instance.Play("Victory");
             StaticReference.GameManager.WinGame();
-
-
         }
         else
         {

@@ -156,7 +156,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 14, y: -301}
+  m_AnchoredPosition: {x: -119, y: -301}
   m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &187271888
@@ -553,6 +553,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SoundLibrary
+      objectReference: {fileID: 0}
+    - target: {fileID: 7693214957992538982, guid: 199cbfdaf70fb4e4184d6b92205db003,
+        type: 3}
+      propertyPath: sounds.Array.data[68].loop
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7693214957992538983, guid: 199cbfdaf70fb4e4184d6b92205db003,
         type: 3}

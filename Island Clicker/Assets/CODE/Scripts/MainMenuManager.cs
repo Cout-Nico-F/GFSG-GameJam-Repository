@@ -15,6 +15,7 @@ public class MainMenuManager : MonoBehaviour
     {
         AudioManager.instance.Stop("MainMenu-Music");
         AudioManager.instance.Play("NoStar-Music");
+        AudioManager.instance.Play("Ambience");
         UnityEngine.SceneManagement.SceneManager.LoadScene("Play");
     }
     private void ResetAll()

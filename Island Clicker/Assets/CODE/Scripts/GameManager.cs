@@ -89,6 +89,11 @@ public class GameManager : MonoBehaviour
     public void HouseDestroyed()//GameOver
     {
         uiManager.ShowGameOverUi();
+        AudioManager.instance.Stop("NoStar-Music");
+        AudioManager.instance.Stop("WoodStar-Music");
+        AudioManager.instance.Stop("RockStar-Music");
+        AudioManager.instance.Stop("WaterStar-Music");
+        AudioManager.instance.Stop("CrystalStar-Music");
         AudioManager.instance.Play("HouseDestroyed");
     }
     public void EnemyDied(Enemy enemy)

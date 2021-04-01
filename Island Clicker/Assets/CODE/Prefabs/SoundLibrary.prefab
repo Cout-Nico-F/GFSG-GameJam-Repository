@@ -650,7 +650,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: AntennaBuild
     clip: {fileID: 8300000, guid: d7b0223e48d4a8c469ee46da9806f5a1, type: 3}
-    volume: 0.35
+    volume: 0.3
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
@@ -660,6 +660,51 @@ MonoBehaviour:
   - name: SOS
     clip: {fileID: 8300000, guid: 2da6219d0b5bd1741b458bac47c959c6, type: 3}
     volume: 0.4
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Sword_Error
+    clip: {fileID: 8300000, guid: 43e119ae452a9ea43971b19560a9c333, type: 3}
+    volume: 0.8
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: GameOverUI
+    clip: {fileID: 8300000, guid: 5ed02a0af49624949a363ca826a178d6, type: 3}
+    volume: 0.7
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: HouseAttacked3
+    clip: {fileID: 8300000, guid: 54adb26e926fb1645912aeaebce3f2f7, type: 3}
+    volume: 0.4
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: HouseAttacked4
+    clip: {fileID: 8300000, guid: d2df91b8079636046b23c625b3aed713, type: 3}
+    volume: 0.6
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: HouseAttacked5
+    clip: {fileID: 8300000, guid: 5222d112413f2f44e97518c9359a57f2, type: 3}
+    volume: 0.6
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
