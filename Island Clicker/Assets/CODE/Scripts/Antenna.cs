@@ -38,8 +38,9 @@ public class Antenna : MonoBehaviour
         }
         else
         {
+            AudioManager.instance.Play("Sword_Error");
             StartCoroutine(
-                        ShowMessageCoroutine(antennaRecipeUi, 3f));
+                        ShowMessageCoroutine(antennaRecipeUi, 2f));
             //Animation
         }
     }
