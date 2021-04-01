@@ -27,6 +27,7 @@ public class House : MonoBehaviour
     private void Destroyed()
     {
         //Avisar al GM que la casa fue destruida
+        StaticReference.GameManager.HouseDestroyed();
         //cambiar el sprite de la casa
         Debug.LogWarning("House has been destroyed!");
     }

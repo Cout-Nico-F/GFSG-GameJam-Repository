@@ -61,6 +61,10 @@ public class GameManager : MonoBehaviour
         StaticReference.GameManager = this;
     }
 
+    public void ToMainMenu()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+    }
     public void Pause()
     {
         if (!isPaused)
@@ -76,8 +80,10 @@ public class GameManager : MonoBehaviour
             uiManager.ShowPauseUi(false);
         }
     }
-
-
+    public void HouseDestroyed()//GameOver
+    {
+        uiManager.ShowGameOverUi();
+    }
     public void EnemyDied(Enemy enemy)
     {
 
@@ -89,7 +95,6 @@ public class GameManager : MonoBehaviour
 
         UnlockResourcesByExperience();
     }
-
     private void AssignLootStats(Enemy enemy)
     {
         switch (enemy.EnemyType)
@@ -155,7 +160,6 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
-
     private void UnlockResourcesByExperience()
     {
         if (Stats.Experience >= crystals.ActivationScore && crystals.ActiveFlag == false)
@@ -180,7 +184,6 @@ public class GameManager : MonoBehaviour
             uiManager.UpdateExperienceLevel(GameManager.EnemyTypes.Wood);
         }
     }
-
     public void HealthGodMode()
     {
         if (!isHealthGodMode)
@@ -212,7 +215,6 @@ public class GameManager : MonoBehaviour
             speedGodMode = 0;
         }
     }
-
     public void SpawnGodMode()
     {
         if (spawnGodMode > 2)

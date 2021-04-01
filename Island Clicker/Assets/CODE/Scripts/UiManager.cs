@@ -35,7 +35,7 @@ public class UiManager : MonoBehaviour
     private GameObject woodStar, stoneStar, waterStar, crystalStar;
     
     [SerializeField]
-    private GameObject pausePanel;
+    private GameObject pausePanel, gameOverPanel;
 
     public int MaxWood { get => maxWood; }
     public int MaxRock { get => maxRock; }
@@ -50,6 +50,10 @@ public class UiManager : MonoBehaviour
         activeWaterIcons = new List<GameObject>();
     }
 
+    public void ShowGameOverUi()
+    {
+        gameOverPanel.SetActive(true);
+    }
     public void ShowPauseUi(bool value)
     {
         pausePanel.SetActive(value);
